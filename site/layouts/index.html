@@ -1,1 +1,11 @@
-{{ define "main" }} main {{ end }}
+{{ define "main" }} {{ partial "navbar" . }}
+
+<div class="pt-20">
+  {{ partial "intro" . }}
+  <div class="px-10 py-20" id="about">{{ partial "about" . }}</div>
+  <div class="px-10 py-20 bg-black text-white" id="contact">
+    {{ partial "contact" . }}
+  </div>
+</div>
+
+{{ end }}
