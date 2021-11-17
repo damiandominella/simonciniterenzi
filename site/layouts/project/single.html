@@ -1,15 +1,18 @@
-{{ define "main" }} projecttttt
+{{ define "main" }} {{ partial "navbar" . }}
 
-<div class="mw6 center ph3 pv4">
-  <h1 class="f2 lh-title b mb3">{{.Title}}</h1>
-  <div class="flex justify-between grey-3">
+<div class="container mx-auto px-10">
+  <div class="pt-40">
+    <h1 class="text-4xl font-medium mb-5">{{ .Title }}</h1>
+    <p>{{ .Description }}</p>
+
     <p>{{ .Date.Format "Mon, Jan 2, 2006" }}</p>
     <p>Read in {{ .ReadingTime }} minutes</p>
+
+    <img src="{{ .Params.image }}" alt="{{ .Title }}" />
+
+    {{ .Content }}
   </div>
-  <div class="cms mw6">
-    <p>{{ .Description }}</p>
-    {{ if .Params.image }}<img src="{{ .Params.image }}" alt="{{ .Title }}" />{{
-    end }} {{ .Content }}
-  </div>
+
+  <div class="pt-40" id="contact">{{ partial "contact" . }}</div>
 </div>
 {{ end }}

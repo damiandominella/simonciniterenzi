@@ -1,8 +1,8 @@
 <div>
-  <h1 class="text-3xl font-medium mb-5">{{ .Params.about.heading }}</h1>
+  <h1 class="text-4xl font-medium mb-5">{{ .Params.about.heading }}</h1>
   <p class="text-base font-light mb-10">{{ .Params.about.description }}</p>
 
-  <div class="grid grid-cols-2 items-start gap-8">
+  <div class="grid sm:grid-cols-1 md:grid-cols-2 items-start gap-20">
     {{ range .Params.about.people }}
     <div>
       <img src="{{ .image }}" class="pb-5"/>

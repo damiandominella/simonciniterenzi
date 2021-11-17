@@ -1,41 +1,45 @@
 <div>
-  <h1 class="text-3xl font-medium mb-5">{{ .Params.contact.heading }}</h1>
-  <p class="text-base font-light mb-5">{{ .Params.contact.description }}</p>
+  <h1 class="text-4xl font-medium mb-5">{{ .Params.contact.heading }}</h1>
 
-  <form action="#" class="flex flex-col max-w-xl">
-    <div class="my-5 flex items-center justify-between gap-10">
+  <div class="grid sm:grid-cols-1 md:grid-cols-2 items-start gap-20">
+    <p class="text-base font-light mb-5">{{ .Params.contact.description }}</p>
+    <form action="#" class="flex flex-col w-full">
+      <div class="my-2 flex items-center justify-between gap-10">
+        <input
+          class="h-10 rounded px-2 text-black w-full border"
+          type="text"
+          id="firstname"
+          name="firstname"
+          placeholder="Nome"
+        />
+        <input
+          class="h-10 rounded px-2 text-black w-full border"
+          type="text"
+          id="lastname"
+          name="lastname"
+          placeholder="Cognome"
+        />
+      </div>
+
       <input
-        class="h-10 rounded px-2 text-black w-full"
-        type="text"
-        id="firstname"
-        name="firstname"
-        placeholder="Nome"
+        class="h-10 rounded px-2 text-black w-full my-2 border"
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Email"
       />
-      <input
-        class="h-10 rounded px-2 text-black w-full"
-        type="text"
-        id="lastname"
-        name="lastname"
-        placeholder="Cognome"
-      />
-    </div>
 
-    <input
-      class="h-10 rounded px-2 text-black w-full my-5"
-      type="email"
-      id="email"
-      name="email"
-      placeholder="Email"
-    />
+      <textarea
+        class="h-10 rounded p-2 text-black my-5 border"
+        id="message"
+        name="message"
+        placeholder="Il tuo messaggio..."
+        style="height: 200px; resize: none"
+      ></textarea>
 
-    <textarea
-      class="h-10 rounded p-2 text-black my-5"
-      id="message"
-      name="message"
-      placeholder="Il tuo messaggio..."
-      style="height: 200px"
-    ></textarea>
-
-    <button type="submit">Invia</button>
-  </form>
+      <button type="submit" class="bg-black rounded px-5 py-2 text-white">
+        Invia
+      </button>
+    </form>
+  </div>
 </div>

@@ -1,0 +1,21 @@
+<div>
+  <h1 class="text-4xl font-medium mb-5">{{ .Params.portfolio.heading }}</h1>
+  <p class="text-base font-light mb-10">{{ .Params.portfolio.description }}</p>
+
+  <div class="grid grid-flow-row grid-cols-3 grid-rows-3 gap-4">
+    {{ range ( where .Site.RegularPages "Type" "project" | first 9 ) }}
+    <a href="{{ .Permalink }}">
+      <div
+        style="background-image: url('{{ .Params.image }}')"
+        class="bg-no-repeat bg-center bg-cover h-64"
+      ></div>
+    </a>
+    {{end}}
+  </div>
+
+  <div class="flex items-center my-10">
+    <button type="button" class="bg-black rounded px-5 py-2 text-white m-auto">
+      Vedi tutti i progetti
+    </button>
+  </div>
+</div>
