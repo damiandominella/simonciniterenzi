@@ -2,15 +2,31 @@
 
 <div class="container mx-auto px-10">
   <div class="pt-40">
-    <h1 class="text-4xl font-medium mb-5">{{ .Title }}</h1>
-    <p>{{ .Description }}</p>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-10">
+      <div
+        class="
+          row-start-2
+          sm:row-start-1
+          col-span-3
+          sm:col-span-2
+          flex flex-col
+          gap-5
+        "
+      >
+        <img src="{{ .Params.image }}" alt="{{ .Title }}" class="w-full" />
+        {{ range .Params.gallery }}
+        <img src="{{ .image }}" alt="{{ .caption }}" class="w-full" />
+        {{ end }}
+      </div>
+      <div class="row-start-1 col-span-3 sm:col-span-1 sm:col-start-3">
+        <h1 class="text-4xl font-medium mb-5">{{ .Title }}</h1>
+        <p>{{ .Description }}</p>
 
-    <p>{{ .Date.Format "Mon, Jan 2, 2006" }}</p>
-    <p>Read in {{ .ReadingTime }} minutes</p>
+        <p>{{ .Date.Format "Mon, Jan 2, 2006" }}</p>
 
-    <img src="{{ .Params.image }}" alt="{{ .Title }}" />
-
-    {{ .Content }}
+        {{ .Content }}
+      </div>
+    </div>
   </div>
 
   <div class="pt-40" id="contact">{{ partial "contact" . }}</div>
