@@ -1,3 +1,5 @@
+import "./css/main.css";
+
 document.querySelectorAll('#mobile-menu a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
     e.preventDefault();

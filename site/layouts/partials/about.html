@@ -5,7 +5,7 @@
   <div class="grid sm:grid-cols-1 md:grid-cols-2 items-start gap-20">
     {{ range .Params.about.people }}
     <div>
-      <img src="{{ .image }}" class="pb-5"/>
+      <img src="{{ .image }}" class="pb-5 max-w-full sm:max-w-md"/>
       <h1 class="text-2xl font-medium">{{ .name }}</h1>
       <h1 class="text-l font-thin mb-3">{{ .role }}</h1>
       <p class="text-base font-light text-gray-700">{{ .description }}</p>

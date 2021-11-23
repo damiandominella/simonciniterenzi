@@ -1,12 +1,19 @@
 {{ define "main" }} {{ partial "navbar" . }}
 
-<div class="container mx-auto px-10">
+<div class="container mx-auto px-5 sm:px-10">
   <div class="pt-40">
     <h1 class="text-4xl font-medium mb-5">{{ .Title }}</h1>
     <p class="text-base font-light mb-10">{{ .Description }}</p>
 
-    <div class="grid grid-flow-row sm:grid-cols-2 md:grid-cols-3 md:grid-rows-3 gap-4">
-      {{ range ( where .Site.RegularPages "Type" "project" | first 9 ) }}
+    <div
+      class="
+        grid grid-flow-row
+        sm:grid-cols-2
+        md:grid-cols-3 md:grid-rows-3
+        gap-4
+      "
+    >
+      {{ range ( where .Site.RegularPages "Type" "project" ) }}
       <a href="{{ .Permalink }}">
         <div
           style="background-image: url('{{ .Params.image }}')"
